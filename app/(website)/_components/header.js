@@ -1,11 +1,12 @@
 import { UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <section className="px-24 py-6 space-y-6">
       <nav className="mx-auto max-w-screen-lg ">
         <div className="flex items-center justify-between">
-          <h1>Personal tracker</h1>
+          <Link href={'/dashboard'}>Personal Organizer</Link>
           <UserButton></UserButton>
         </div>
       </nav>
