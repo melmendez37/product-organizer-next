@@ -16,7 +16,7 @@ const Dashboard = async () => {
   });
 
   return (
-    <section className="p-24 space-y-6 min-h-screen flex flex-col ">
+    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-[#F2F2F2] dark:bg-slate-800">
       <div>
         <form 
           className="flex" 
@@ -25,9 +25,10 @@ const Dashboard = async () => {
           <input hidden 
             id="creator" 
             name="creator" 
-            defaultValue={creator}/>
-          <Input name="name" id="name" placeholder="Name"/>
-          <Button type="submit">
+            defaultValue={creator}
+            />
+          <Input name="name" id="name" placeholder="Enter a new category..."/>
+          <Button className="bg-[#003B4A] text-slate-300 font-bold text-sm" type="submit">
             Add category
           </Button>
         </form>
@@ -39,16 +40,16 @@ const Dashboard = async () => {
             <thead>
               <tr>
                 <th
-                  className="px-5 py-3 text-sm font-normal text-center text-grey-800 
-                bg-white border-b border-grey-200"
+                  className="px-5 py-3 text-lg font-bold text-center text-slate-300 
+                bg-[#003B4A] dark:bg-black"
                 >
                   Name
                 </th>
                 <th
-                  className="px-5 py-3 text-sm font-normal text-center text-grey-800 
-                bg-white border-b border-grey-200"
+                  className="px-5 py-3 text-lg font-bold text-center text-slate-300 
+                bg-[#003B4A] dark:bg-black"
                 >
-                  Update
+                  Actions
                 </th>
               </tr>
             </thead>
@@ -57,20 +58,22 @@ const Dashboard = async () => {
                 <tr key={category.id}>
                   <td className="px-5 py-3 text-sm font-normal text-center text-grey-800 border-b border-grey-200">
                     <Link
-                      
+                      className="font-bold text-md"
                       href={`/dashboard/category/${category.id}/update`}>
                       {category.name}
                     </Link>
                   </td>
                   <td className="px-5 py-3 text-sm font-normal text-center flex justify-center items-center text-grey-800 border-b border-grey-200">
                     <Link
-                    className="mr-1"
                     href={`/dashboard/category/${category.id}/update`}>
-                      Details
+                    <Button>
+                    Details
+                    </Button>
+                      
                     </Link>
                     <form action={deleteCategory}>
                       <input hidden defaultValue={category.id} name="id" />
-                      <Button variant="light" type="submit">
+                      <Button className="bg-red-500 hover:bg-red-400 ml-4" type="submit">
                         Delete
                       </Button>
                     </form>
