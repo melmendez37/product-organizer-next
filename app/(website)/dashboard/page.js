@@ -16,7 +16,7 @@ const Dashboard = async () => {
   });
 
   return (
-    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-[#F2F2F2] dark:bg-slate-800">
+    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-[#CECECE] dark:bg-slate-800">
       <div>
         <form 
           className="flex" 
@@ -36,52 +36,38 @@ const Dashboard = async () => {
 
       {categories.length > 0 ? (
         <>
-          <table className="min-w-full leading-normal text-center">
-            <thead>
-              <tr>
-                <th
-                  className="px-5 py-3 text-lg font-bold text-center text-slate-300 
-                bg-[#003B4A] dark:bg-black"
-                >
-                  Name
-                </th>
-                <th
-                  className="px-5 py-3 text-lg font-bold text-center text-slate-300 
-                bg-[#003B4A] dark:bg-black"
-                >
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+          <div className="min-w-full leading-normal text-center flex flex-row">
               {categories.map((category) => (
-                <tr key={category.id}>
-                  <td className="px-5 py-3 text-sm font-normal text-center text-grey-800 border-b border-grey-200">
-                    <Link
-                      className="font-bold text-md"
-                      href={`/dashboard/category/${category.id}/update`}>
-                      {category.name}
-                    </Link>
-                  </td>
-                  <td className="px-5 py-3 text-sm font-normal text-center flex justify-center items-center text-grey-800 border-b border-grey-200">
-                    <Link
-                    href={`/dashboard/category/${category.id}/update`}>
-                    <Button>
-                    Details
-                    </Button>
+                <div key={category.id}>
+                  <div className="px-5 py-3 text-sm font-normal text-center text-grey-800">
+                    <div className="w-56 h-56 bg-black justify-center flex flex-2">
                       
-                    </Link>
-                    <form action={deleteCategory}>
-                      <input hidden defaultValue={category.id} name="id" />
-                      <Button className="bg-red-500 hover:bg-red-400 ml-4" type="submit">
-                        Delete
-                      </Button>
-                    </form>
-                  </td>
-                </tr>
+                      <Link
+                        className="font-bold text-md text-white"
+                        href={`/dashboard/category/${category.id}/update`}>
+                        {category.name}
+                      </Link>
+
+                      <Link 
+                      href={`/dashboard/category/${category.id}/update`}>
+                        <Button className="bg-[#9D9D9D] font-semibold">
+                        Details
+                        </Button>
+                      </Link>
+
+                      <form action={deleteCategory}>
+                        <input hidden defaultValue={category.id} name="id"/>
+                          <Button className="bg-red-500 hover:bg-red-400 ml-4 font-semibold" type="submit">
+                            Delete
+                          </Button>
+                      </form>
+                      
+                    </div>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
+            
+          </div>
         </>
       ) : (
         <>

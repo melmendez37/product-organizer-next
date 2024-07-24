@@ -15,7 +15,7 @@ const UpdateCategory = async({params}) => {
     }
   })
   return (
-    <section className="p-24 space-y-6 min-h-screen flex flex-col ">
+    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-[#CECECE] dark:bg-slate-800">
     <div>
       <form 
         action={updateCategory}
