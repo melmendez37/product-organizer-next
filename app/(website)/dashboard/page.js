@@ -18,7 +18,7 @@ const Dashboard = async () => {
   return (
     <section
         className="p-8 space-y-6 min-h-screen flex flex-col
-      bg-[#CECECE] dark:bg-slate-800">
+      bg-slate-300 dark:bg-slate-800">
       <div>
         <form 
           className="flex" 
@@ -45,8 +45,8 @@ const Dashboard = async () => {
                     <div>
                       <Link
                         className="w-56 h-40 items-center justify-center
-                        border border-slate-400 bg-transparent dark:text-slate-400 hover:opacity-80 hover
-                        flex flex-2 rounded-md text-[#F2F2F2] font-bold text-lg"
+                        border border-slate-600 text-slate-300 dark:border-slate-400 bg-transparent dark:bg-slate-900 dark:text-slate-400 hover:opacity-80 hover
+                        flex flex-2 rounded-md  font-bold text-lg"
                         href={`/dashboard/category/${category.id}/update`}>
                         {category.name}
                       </Link>
@@ -54,7 +54,7 @@ const Dashboard = async () => {
                     <div className="mt-4 justify-center flex flex-2">
                         <Link 
                           href={`/dashboard/category/${category.id}/update`}>
-                            <Button className="border border-slate-400 bg-transparent dark:text-slate-400 hover:bg-slate-500 hover:opacity-40 font-semibold">
+                            <Button className="border text-slate-600 border-slate-600 bg-transparent dark:text-slate-400 hover:bg-slate-500 hover:opacity-40 font-semibold">
                             Details
                             </Button>
                         </Link>

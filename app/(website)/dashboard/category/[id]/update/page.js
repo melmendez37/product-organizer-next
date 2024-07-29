@@ -16,7 +16,7 @@ const UpdateCategory = async({params}) => {
     }
   })
   return (
-    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-[#CECECE] dark:bg-slate-800">
+    <section className="p-8 space-y-6 min-h-screen flex flex-col bg-slate-300 dark:bg-slate-800">
     <div>
       <Link className="dark:text-[#F2F2F2] text-black opacity-50 underline italic" href={`/dashboard`}>Back</Link>
       <h1 className="font-bold text-md mt-4 mb-4 dark:text-[#F2F2F2] text-black">Update Category</h1>
@@ -48,7 +48,7 @@ const UpdateCategory = async({params}) => {
                 <div className="px-5 py-5">
                   <div>
                     <div className="w-56 h-32 items-center justify-center
-                        bg-[#F2F2F2] dark:bg-slate-900 dark:text-[rgb(242,242,242)] flex flex-2 rounded-md text-black font-bold text-lg">
+                        bg-transparent border border-slate-600 text-slate-600 dark:bg-slate-900 dark:text-[rgb(242,242,242)] flex flex-2 rounded-md font-bold text-lg">
                       {product.name}
                     </div>
                     <div className="mt-4 justify-center flex">
