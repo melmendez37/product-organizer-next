@@ -19,7 +19,10 @@ const Dashboard = async () => {
     <section
         className="p-8 space-y-6 min-h-screen flex flex-col
       bg-slate-300 dark:bg-slate-800">
-      <div>
+      <div className="px-4 py-2 text-center">
+        <h1 className="font-bold text-xl dark:text-slate-300 text-[#003B4A]">CATEGORIES</h1>
+      </div>
+      <div className="border border-transparent dark:border-slate-600 rounded-md p-8 bg-slate-400 dark:bg-slate-900">
         <form 
           className="flex" 
           action={addCategory}
@@ -30,7 +33,7 @@ const Dashboard = async () => {
             defaultValue={creator}
             />
           <Input name="name" id="name" placeholder="Enter a new category..."/>
-          <Button className="bg-[#003B4A] dark:bg-slate-900 text-slate-300 font-bold text-sm" type="submit">
+          <Button className="border border-slate-500 dark:border-slate-500 bg-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-500 font-semibold" type="submit">
             Add category
           </Button>
         </form>
@@ -45,7 +48,7 @@ const Dashboard = async () => {
                     <div>
                       <Link
                         className="w-56 h-40 items-center justify-center
-                        border border-slate-600 text-slate-300 dark:border-slate-400 bg-transparent dark:bg-slate-900 dark:text-slate-400 hover:opacity-80 hover
+                        border border-transparent text-[#003B4A] dark:border-slate-400 bg-slate-400 dark:bg-slate-900 dark:text-slate-400 hover:opacity-80 hover
                         flex flex-2 rounded-md  font-bold text-lg"
                         href={`/dashboard/category/${category.id}/update`}>
                         {category.name}
@@ -54,7 +57,7 @@ const Dashboard = async () => {
                     <div className="mt-4 justify-center flex flex-2">
                         <Link 
                           href={`/dashboard/category/${category.id}/update`}>
-                            <Button className="border text-slate-600 border-slate-600 bg-transparent dark:text-slate-400 hover:bg-slate-500 hover:opacity-40 font-semibold">
+                            <Button className="border border-slate-500 dark:border-slate-500 bg-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-500 font-semibold">
                             Details
                             </Button>
                         </Link>
@@ -62,7 +65,7 @@ const Dashboard = async () => {
                         <form action={deleteCategory}>
                           <input hidden defaultValue={category.id} name="id"/>
                             <Button
-                              className="hover:bg-red-200 text-red-500 border border-red-500 hover:opacity-60 bg-transparent ml-4 font-semibold"
+                              className="hover:bg-rose-500 text-rose-700 border border-rose-700 bg-transparent ml-4 font-semibold"
                               type="submit">
                               Delete
                             </Button>
